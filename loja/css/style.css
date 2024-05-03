@@ -188,6 +188,9 @@ footer{
     }
 
     .menu{
+        display: none;
+    }
+    .menu-visivel{
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -208,6 +211,21 @@ footer{
         margin-left: -24px;
     }
     
+    
+    /* Animação do toggle */
+    .mudar .bar1 {
+        transform: translate(0, 11px) rotate(-45deg);
+        width: 60%;
+        height: 6px;
+    }
+   
+    .mudar .bar2 {opacity: 0;}
+    
+    .mudar .bar3 {
+        transform: translate(0, -13px) rotate(45deg);
+        width: 60%;
+        height: 6px;
+    }
     
 }
 
