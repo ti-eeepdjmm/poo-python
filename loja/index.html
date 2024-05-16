@@ -19,11 +19,12 @@
                 <a href="#" class="menu-item">Sobre</a>
                 <a href="#" class="menu-item">Contato</a>
             </nav>
-            <div class="toggle">
+            <div class="botao" onclick="clicar(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
+            
         </header>
         <section class="banner">
             <h1>Seja bem vindo a IGeek!</h1>
@@ -101,7 +102,22 @@
             <p>&copy;IGeek Todos os direitos reservados 2024. Desenvolvido pelo curso de Informática.</p>
         </footer>
     </div>
-    <script src="./js/script.js"></script>
+    <script>
+        function clicar(x) {
+            x.classList.toggle("change");
+            
+            //fazer o menu aparecer
+            let menu = document.querySelector(".menu");
+            
+            if(menu.style.display == 'flex'){
+                menu.style.display = 'none'
+            }else{
+                menu.style.display = 'flex'
+            }
+            
+
+        }
+    </script>
 </body>
 
 </html>

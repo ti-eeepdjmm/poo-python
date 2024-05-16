@@ -60,10 +60,16 @@ header{
 }
 
 .menu > .menu-item{
-    margin-left: 20px;
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+.menu{
+    display: flex;
+    column-gap: 15px;
+}
+
+
 
 /* banner */
 
@@ -141,95 +147,74 @@ footer{
     height: 80px;
 }
 
-/* botão toggle */
+/* --------Botao------- */
 
-.toggle{
-    right: 100px;
-    width: 48px;
-    cursor: pointer;
+.botao {
     display: none;
+    cursor: pointer;
 }
 
-.toggle div{
-    height: 8px;
-    background-color: #ffffff;
-    margin-bottom: 5px;
-    border-radius: 3px;
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
 }
 
-.toggle div:nth-child(2){
-    width: 80%;
+/* Rotate first bar */
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
 }
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
 /* Responsividade do site */
 
+@media only screen and (max-width:600px){
+    .menu{
+        display: none;
+    }
 
-/* sm */
+    .botao{
+        display: block;
+    }
 
-@media screen and (max-width: 640px) {
     .produtos > div{
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 24px;
+        grid-template-columns: 1fr;
+        row-gap:10px;
     }
 
-    .banner > h1{
-        font-size: 2.5rem;
-        text-align: center;
-    }
-
-    .banner > p{
-        margin-top: -30px;
-        text-align: center;
-        font-size: 1.2rem;
+    .menu{
+        flex-direction: column;
+        position:absolute;
+        align-items: center;
+        top:60px;
+        background-color: #800080;
+        right: 0px;
+        padding: 10px 15px;
+        row-gap: 10px;
     }
 
     footer{
         text-align: center;
     }
 
-    /* toggle */
-    .toggle{
-        display: block;
+    .banner{
+        text-align: center;
     }
 
-    .menu{
-        display: none;
+    .produtos > h2{
+        text-align: center;
     }
-    .menu-visivel{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      border: 1px solid #fff;
-      background-color: var(--cor-primaria);
-      right: 0px;
-      top: 60px;
-      padding: 24px;
-    }
-
-    .menu > .menu-item{
-        margin-left: 0px;
-        margin-bottom: 10px;
-    }
-    
-    .logo {
-        margin-left: -24px;
-    }
-    
-    
-    /* Animação do toggle */
-    .mudar .bar1 {
-        transform: translate(0, 11px) rotate(-45deg);
-        width: 60%;
-        height: 6px;
-    }
-   
-    .mudar .bar2 {opacity: 0;}
-    
-    .mudar .bar3 {
-        transform: translate(0, -13px) rotate(45deg);
-        width: 60%;
-        height: 6px;
-    }
-    
 }
-
